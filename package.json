@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": [
+    "types",
+    "client",
+    "server",
+    "demo",
+    "demo-server"
+  ]
+}
