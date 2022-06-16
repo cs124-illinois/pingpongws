@@ -1,6 +1,6 @@
 {
   "name": "@cs124/pingpongws-client",
-  "version": "2021.7.0",
+  "version": "2022.6.0",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@cs124/pingpongws-types": "2021.7.0"
+    "@cs124/pingpongws-types": "2022.6.0"
   },
   "peerDependencies": {
     "reconnecting-websocket": ">= 4"

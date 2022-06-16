@@ -39,7 +39,7 @@ export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
     ws.addEventListener("open", startPongTimer)
   }
   ws.addEventListener("message", ({ data }) => {
-    const message = JSON.parse(data)
+    const message = JSON.parse(data.toString())
     if (PongMessage.guard(message) && message.nonce === nonce && pongTimeout) {
       if (verbose) {
         console.debug(`<- pong ${nonce}`)

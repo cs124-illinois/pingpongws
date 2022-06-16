@@ -9,7 +9,7 @@
     "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write"
   },
   "dependencies": {
-    "@cs124/pingpongws-server": "2021.7.0",
+    "@cs124/pingpongws-server": "2022.6.0",
     "@koa/cors": "^3.3.0",
     "@koa/router": "^10.1.1",
     "koa": "^2.13.4",
