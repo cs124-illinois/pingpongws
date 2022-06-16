@@ -8,16 +8,21 @@ import {
 import type ReconnectingWebsocket from "reconnecting-websocket"
 
 export function PingWS(ws: ReconnectingWebsocket, o: PingPongOptions = {}): ReconnectingWebsocket {
-  const { interval, timeout, verbose, useOtherMessages } = { ...pingPongDefaultOptions, ...o }
+  const { interval, timeout, verbose, useOtherMessages, logDisconnects } = { ...pingPongDefaultOptions, ...o }
 
   let pingTimer: ReturnType<typeof setInterval>
   let nonce: number | undefined
   let pingTimeout: ReturnType<typeof setTimeout>
+  let seenInterval = false
 
   function startPingTimer(): void {
     pingTimer = setInterval(() => {
       if (pingTimeout) {
         clearTimeout(pingTimeout)
+      }
+      if (seenInterval) {
+        seenInterval = false
+        return
       }
       nonce = Math.floor(Math.random() * 1024 * 1024)
       if (verbose) {
@@ -25,7 +30,7 @@ export function PingWS(ws: ReconnectingWebsocket, o: PingPongOptions = {}): Reco
       }
       ws.send(JSON.stringify(PingMessage.check({ type: "ping", nonce })))
       pingTimeout = setTimeout(() => {
-        if (verbose) {
+        if (logDisconnects) {
           console.warn("ping timeout: reconnecting")
         }
         ws.reconnect()
@@ -47,11 +52,12 @@ export function PingWS(ws: ReconnectingWebsocket, o: PingPongOptions = {}): Reco
       clearTimeout(pingTimeout)
     } else if (PongMessage.guard(message)) {
       ws.send(data)
-    } else if (pingTimeout && useOtherMessages) {
+    } else if (useOtherMessages) {
       if (verbose) {
         console.debug(`<- another message`)
       }
-      clearTimeout(pingTimeout)
+      seenInterval = true
+      pingTimeout && clearTimeout(pingTimeout)
     }
   })
   ws.addEventListener("close", () => {

@@ -8,16 +8,21 @@ import {
 import type WebSocket from "ws"
 
 export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
-  const { interval, timeout, verbose, useOtherMessages } = { ...pingPongDefaultOptions, ...o }
+  const { interval, timeout, verbose, useOtherMessages, logDisconnects } = { ...pingPongDefaultOptions, ...o }
 
   let pongTimer: ReturnType<typeof setInterval>
   let nonce: number | undefined
   let pongTimeout: ReturnType<typeof setTimeout>
+  let seenInterval = false
 
   function startPongTimer(): void {
     pongTimer = setInterval(() => {
       if (pongTimeout) {
         clearTimeout(pongTimeout)
+      }
+      if (seenInterval) {
+        seenInterval = false
+        return
       }
       nonce = Math.floor(Math.random() * 1024 * 1024)
       if (verbose) {
@@ -25,7 +30,7 @@ export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
       }
       ws.send(JSON.stringify(PongMessage.check({ type: "pong", nonce })))
       pongTimeout = setTimeout(() => {
-        if (verbose) {
+        if (logDisconnects) {
           console.warn(`pong timeout: reconnecting`)
         }
         ws.close()
@@ -47,11 +52,12 @@ export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
       clearTimeout(pongTimeout)
     } else if (PingMessage.guard(message)) {
       ws.send(data)
-    } else if (pongTimeout && useOtherMessages) {
+    } else if (useOtherMessages) {
       if (verbose) {
         console.debug(`<- another message`)
       }
-      clearTimeout(pongTimeout)
+      seenInterval = true
+      pongTimeout && clearTimeout(pongTimeout)
     }
   })
   ws.addEventListener("close", () => {

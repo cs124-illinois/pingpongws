@@ -19,6 +19,7 @@ export const PingPongOptions = Partial({
   interval: Number,
   timeout: Number,
   verbose: Boolean,
+  logDisconnects: Boolean,
   useOtherMessages: Boolean,
 })
 export type PingPongOptions = Static<typeof PingPongOptions>
@@ -26,6 +27,7 @@ export const pingPongDefaultOptions = {
   interval: 8000,
   timeout: 1000,
   verbose: false,
+  logDisconnects: false,
   useOtherMessages: true,
 }
 
