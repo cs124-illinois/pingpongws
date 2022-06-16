@@ -5,23 +5,25 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "checker": "yarn depcheck && yarn prettier && yarn eslint && yarn tsc",
     "clean": "rimraf dist",
+    "depcheck": "depcheck --ignores=prettier-plugin-*",
     "eslint": "eslint src/**",
     "ncu": "ncu",
     "prepublish": "yarn clean && yarn build",
     "start": "tsc -w",
+    "tsc": "tsc --noEmit",
     "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write"
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@cs124/pingpongws-types": "2021.7.0",
-    "ws": "^7.5.3"
+    "@cs124/pingpongws-types": "2021.7.0"
   },
   "devDependencies": {
-    "@types/node": "^16.3.3",
-    "@types/ws": "^7.4.6",
+    "@types/ws": "7.4.6",
     "@typescript-eslint/eslint-plugin": "4.28.3",
     "@typescript-eslint/parser": "4.28.3",
+    "depcheck": "1.4.3",
     "eslint": "7.31.0",
     "eslint-config-prettier": "8.3.0",
     "npm-check-updates": "11.8.3",
@@ -30,7 +32,6 @@
     "prettier-plugin-organize-imports": "2.2.0",
     "rimraf": "3.0.2",
     "runtypes": "6.3.1",
-    "typescript": "4.3.5",
-    "ws": "^7.5.3"
+    "typescript": "4.3.5"
   }
 }

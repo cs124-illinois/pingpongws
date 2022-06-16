@@ -19,12 +19,14 @@ export const PingPongOptions = Partial({
   interval: Number,
   timeout: Number,
   verbose: Boolean,
+  useOtherMessages: Boolean,
 })
 export type PingPongOptions = Static<typeof PingPongOptions>
 export const pingPongDefaultOptions = {
   interval: 8000,
   timeout: 1000,
   verbose: false,
+  useOtherMessages: true,
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
