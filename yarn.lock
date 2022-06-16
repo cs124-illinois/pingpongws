@@ -126,6 +126,18 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
+"@cs124/pingpongws-client@2022.6.0":
+  version "2022.6.0"
+  resolved "https://registry.yarnpkg.com/@cs124/pingpongws-client/-/pingpongws-client-2022.6.0.tgz#b977733723c0a201e11567b9bb89d0c30c117262"
+  integrity sha512-0C+QmHEShjucQxb4oSVRXjvp5cCMTGKn+N9yR4R+LelkJiHTigeF0FEtudmgF+GJujLctNRebzkqc/To9sh+uw==
+  dependencies:
+    "@cs124/pingpongws-types" "2022.6.0"
+
+"@cs124/pingpongws-types@2022.6.0":
+  version "2022.6.0"
+  resolved "https://registry.yarnpkg.com/@cs124/pingpongws-types/-/pingpongws-types-2022.6.0.tgz#f7440baf28365a2dd8c3308d90acd2b4cc8717b5"
+  integrity sha512-VZK3lMPZNd6A/U9e4XljiyDCFHi2vHJhjs+tjdQJoaJIIeptzEsicCe7W3RQdRIF7VtL27SxehhK9Fj0K32ibQ==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"

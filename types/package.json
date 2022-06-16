@@ -1,6 +1,6 @@
 {
   "name": "@cs124/pingpongws-types",
-  "version": "2022.6.0",
+  "version": "2022.6.1",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
