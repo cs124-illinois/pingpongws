@@ -22,10 +22,12 @@ export const PingPongOptions = Partial({
   logDisconnects: Boolean,
   useOtherMessages: Boolean,
 })
-export type PingPongOptions = Static<typeof PingPongOptions>
+export type PingPongOptions = Static<typeof PingPongOptions> & {
+  logIdentifier?: () => string
+}
 export const pingPongDefaultOptions = {
-  interval: 8000,
-  timeout: 1000,
+  interval: 8 * 1024,
+  timeout: 1024,
   verbose: false,
   logDisconnects: false,
   useOtherMessages: true,

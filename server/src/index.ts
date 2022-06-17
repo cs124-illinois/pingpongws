@@ -8,7 +8,10 @@ import {
 import type WebSocket from "ws"
 
 export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
-  const { interval, timeout, verbose, useOtherMessages, logDisconnects } = { ...pingPongDefaultOptions, ...o }
+  const { interval, timeout, verbose, useOtherMessages, logDisconnects, logIdentifier } = {
+    ...pingPongDefaultOptions,
+    ...o,
+  }
 
   let pongTimer: ReturnType<typeof setInterval>
   let nonce: number | undefined
@@ -25,13 +28,14 @@ export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
         return
       }
       nonce = Math.floor(Math.random() * 1024 * 1024)
+      const identifier = (logIdentifier && ` (${logIdentifier()})`) || ""
       if (verbose) {
-        console.debug(`-> pong ${nonce}`)
+        console.debug(`${new Date().toISOString()}: -> pong ${nonce}${identifier}`)
       }
       ws.send(JSON.stringify(PongMessage.check({ type: "pong", nonce })))
       pongTimeout = setTimeout(() => {
         if (logDisconnects) {
-          console.warn(`pong timeout: reconnecting`)
+          console.warn(`${new Date().toISOString()}: pong timeout: reconnecting${identifier}`)
         }
         ws.close()
       }, timeout)
@@ -45,16 +49,17 @@ export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
   }
   ws.addEventListener("message", ({ data }) => {
     const message = JSON.parse(data.toString())
+    const identifier = (logIdentifier && ` (${logIdentifier()})`) || ""
     if (PongMessage.guard(message) && message.nonce === nonce && pongTimeout) {
       if (verbose) {
-        console.debug(`<- pong ${nonce}`)
+        console.debug(`${new Date().toISOString()}: <- pong ${nonce}${identifier}`)
       }
       clearTimeout(pongTimeout)
     } else if (PingMessage.guard(message)) {
       ws.send(data)
     } else if (useOtherMessages) {
       if (verbose) {
-        console.debug(`<- another message`)
+        console.debug(`${new Date().toISOString()}: <- another message${identifier}`)
       }
       seenInterval = true
       pongTimeout && clearTimeout(pongTimeout)

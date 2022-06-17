@@ -26,12 +26,12 @@ export function PingWS(ws: ReconnectingWebsocket, o: PingPongOptions = {}): Reco
       }
       nonce = Math.floor(Math.random() * 1024 * 1024)
       if (verbose) {
-        console.debug(`-> ping ${nonce}`)
+        console.debug(`${new Date().toISOString()}: -> ping ${nonce}`)
       }
       ws.send(JSON.stringify(PingMessage.check({ type: "ping", nonce })))
       pingTimeout = setTimeout(() => {
         if (logDisconnects) {
-          console.warn("ping timeout: reconnecting")
+          console.warn(`${new Date().toISOString()}: ping timeout: reconnecting`)
         }
         ws.reconnect()
       }, timeout)
@@ -47,14 +47,14 @@ export function PingWS(ws: ReconnectingWebsocket, o: PingPongOptions = {}): Reco
     const message = JSON.parse(data)
     if (PingMessage.guard(message) && message.nonce === nonce && pingTimeout) {
       if (verbose) {
-        console.debug(`<- ping ${nonce}`)
+        console.debug(`${new Date().toISOString()}: <- ping ${nonce}`)
       }
       clearTimeout(pingTimeout)
     } else if (PongMessage.guard(message)) {
       ws.send(data)
     } else if (useOtherMessages) {
       if (verbose) {
-        console.debug(`<- another message`)
+        console.debug(`${new Date().toISOString()}: <- another message`)
       }
       seenInterval = true
       pingTimeout && clearTimeout(pingTimeout)

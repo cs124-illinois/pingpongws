@@ -133,10 +133,22 @@
   dependencies:
     "@cs124/pingpongws-types" "2022.6.0"
 
+"@cs124/pingpongws-server@2022.6.0":
+  version "2022.6.0"
+  resolved "https://registry.yarnpkg.com/@cs124/pingpongws-server/-/pingpongws-server-2022.6.0.tgz#0ef36fba2b4de7028104a6c84a59f907ea953655"
+  integrity sha512-+d2Xe/TigWtzXNhmbvrkirjvc14yy4HBzWeMGgSZ82BiMULH7JaG4Jo6Sk2wdATko2BcU9/Lk8SBMDaI5O4eyw==
+  dependencies:
+    "@cs124/pingpongws-types" "2022.6.0"
+
 "@cs124/pingpongws-types@2022.6.0":
   version "2022.6.0"
   resolved "https://registry.yarnpkg.com/@cs124/pingpongws-types/-/pingpongws-types-2022.6.0.tgz#f7440baf28365a2dd8c3308d90acd2b4cc8717b5"
   integrity sha512-VZK3lMPZNd6A/U9e4XljiyDCFHi2vHJhjs+tjdQJoaJIIeptzEsicCe7W3RQdRIF7VtL27SxehhK9Fj0K32ibQ==
+
+"@cs124/pingpongws-types@2022.6.1":
+  version "2022.6.1"
+  resolved "https://registry.yarnpkg.com/@cs124/pingpongws-types/-/pingpongws-types-2022.6.1.tgz#1ec1dbd996ad66f6b8163d33c88551aa62f608c0"
+  integrity sha512-wlBE0XxBI+KSawvdRthSq29kTqlMymac7YOCqJVkB9KjbEL7ryeVYjd2btAn8Kpj61uexDdDexYxqcjWnxYnHg==
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
