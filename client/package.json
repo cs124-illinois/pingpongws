@@ -1,6 +1,6 @@
 {
   "name": "@cs124/pingpongws-client",
-  "version": "2022.6.2",
+  "version": "2022.8.0",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -17,24 +17,24 @@
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@cs124/pingpongws-types": "2022.6.1"
+    "@cs124/pingpongws-types": "2022.8.0"
   },
   "peerDependencies": {
     "reconnecting-websocket": ">= 4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.28.0",
-    "@typescript-eslint/parser": "5.28.0",
+    "@typescript-eslint/eslint-plugin": "5.35.1",
+    "@typescript-eslint/parser": "5.35.1",
     "depcheck": "1.4.3",
-    "eslint": "8.17.0",
+    "eslint": "8.23.0",
     "eslint-config-prettier": "8.5.0",
-    "npm-check-updates": "14.0.1",
+    "npm-check-updates": "16.0.6",
     "prettier": "2.7.1",
-    "prettier-package-json": "2.6.3",
-    "prettier-plugin-organize-imports": "3.0.0",
+    "prettier-package-json": "2.6.4",
+    "prettier-plugin-organize-imports": "3.1.0",
     "reconnecting-websocket": "4.4.0",
     "rimraf": "3.0.2",
-    "runtypes": "6.5.1",
-    "typescript": "4.7.3"
+    "runtypes": "6.6.0",
+    "typescript": "4.8.2"
   }
 }
