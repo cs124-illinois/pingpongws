@@ -8,7 +8,7 @@ import {
 import type WebSocket from "ws"
 
 export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
-  const { interval, timeout, verbose, useOtherMessages, logDisconnects, logIdentifier } = {
+  const { interval, timeout, verbose, useOtherMessages, usePingMessages, logDisconnects, logIdentifier } = {
     ...pingPongDefaultOptions,
     ...o,
   }
@@ -55,6 +55,10 @@ export function PongWS(ws: WebSocket, o: PingPongOptions = {}): WebSocket {
         console.debug(`${new Date().toISOString()}: <- pong ${nonce}${identifier}`)
       }
       clearTimeout(pongTimeout)
+      if (usePingMessages) {
+        seenInterval = true
+        pongTimeout && clearTimeout(pongTimeout)
+      }
     } else if (PingMessage.guard(message)) {
       ws.send(data)
     } else if (useOtherMessages) {

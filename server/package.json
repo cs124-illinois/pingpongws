@@ -1,6 +1,6 @@
 {
   "name": "@cs124/pingpongws-server",
-  "version": "2022.8.1",
+  "version": "2022.8.2",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@cs124/pingpongws-types": "2022.8.1"
+    "@cs124/pingpongws-types": "2022.8.2"
   },
   "devDependencies": {
     "@types/ws": "8.5.3",

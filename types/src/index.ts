@@ -21,16 +21,18 @@ export const PingPongOptions = Partial({
   verbose: Boolean,
   logDisconnects: Boolean,
   useOtherMessages: Boolean,
+  usePingMessages: Boolean,
 })
 export type PingPongOptions = Static<typeof PingPongOptions> & {
   logIdentifier?: () => string
 }
 export const pingPongDefaultOptions = {
-  interval: 8 * 1024,
-  timeout: 1024,
+  interval: 32 * 1024,
+  timeout: 8 * 1024,
   verbose: false,
   logDisconnects: false,
   useOtherMessages: true,
+  usePingMessages: true,
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
