@@ -3334,9 +3334,9 @@ koa-convert@^2.0.0:
     co "^4.6.0"
     koa-compose "^4.1.0"
 
-koa-easy-ws@cs124-illinois/koa-easy-ws#2023.1.0:
-  version "2023.1.0"
-  resolved "https://codeload.github.com/cs124-illinois/koa-easy-ws/tar.gz/5ac5e1aa76ac33b1e2cbdfb3a4630f5a4f26dc72"
+koa-easy-ws@cs124-illinois/koa-easy-ws#2023.1.1:
+  version "2023.1.1"
+  resolved "https://codeload.github.com/cs124-illinois/koa-easy-ws/tar.gz/cd1a70eeec4143c46f8452e767593f96c59300dd"
   dependencies:
     debug "^4.3.4"
 
@@ -4581,9 +4581,9 @@ readdirp@^3.5.0, readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-reconnecting-websocket@cs124-illinois/reconnecting-websocket#2023.1.0:
-  version "4.4.0"
-  resolved "https://codeload.github.com/cs124-illinois/reconnecting-websocket/tar.gz/b797dccd118d394453eab6f8345daa59c2a12268"
+reconnecting-websocket@cs124-illinois/reconnecting-websocket#2023.1.1:
+  version "2023.1.1"
+  resolved "https://codeload.github.com/cs124-illinois/reconnecting-websocket/tar.gz/2c8aa9acf62fc975d09a9d90b520db2881f5801c"
 
 regenerator-runtime@^0.13.4:
   version "0.13.7"

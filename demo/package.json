@@ -18,7 +18,7 @@
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "reconnecting-websocket": "cs124-illinois/reconnecting-websocket#2023.1.0",
+    "reconnecting-websocket": "cs124-illinois/reconnecting-websocket#2023.1.1",
     "runtypes": "6.6.0"
   },
   "devDependencies": {
