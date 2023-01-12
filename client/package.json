@@ -32,7 +32,7 @@
     "prettier": "2.8.2",
     "prettier-package-json": "2.8.0",
     "prettier-plugin-organize-imports": "3.2.1",
-    "reconnecting-websocket": "4.4.0",
+    "reconnecting-websocket": "cs124-illinois/reconnecting-websocket#2023.1.0",
     "rimraf": "3.0.2",
     "runtypes": "6.6.0",
     "typescript": "4.9.4"

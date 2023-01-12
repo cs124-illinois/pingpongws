@@ -39,6 +39,7 @@
       "package.json",
       "src/index.ts"
     ],
+    "ext": "ts",
     "exec": "env-cmd ts-node src/index.ts"
   }
 }

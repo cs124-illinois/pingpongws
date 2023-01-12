@@ -18,8 +18,15 @@ router.get("/", async (ctx) => {
   )
 })
 
-const server = new Koa().use(websocket()).use(router.routes()).use(router.allowedMethods())
+const app = new Koa().use(websocket()).use(router.routes()).use(router.allowedMethods())
 
 Promise.resolve().then(async () => {
-  server.listen(PORT)
+  const server = app.listen(PORT)
+  server.requestTimeout = 0
+  server.headersTimeout = 0
+  setInterval(() => {
+    server.getConnections((_, count) => {
+      console.log(`${new Date()} ${count}`)
+    })
+  }, 60 * 1024)
 })
