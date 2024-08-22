@@ -1,4 +1,5 @@
 import { Boolean, Literal, Number, Partial, Record, Static, Union } from "runtypes"
+import type { MessageEvent } from "ws"
 
 export const PingMessage = Record({
   type: Literal("ping"),
@@ -35,8 +36,7 @@ export const pingPongDefaultOptions = {
   usePingMessages: true,
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type messageHandler = (event: any) => void
+type messageHandler = (event: MessageEvent) => void
 
 export function filterPingPongMessages(listener: messageHandler): messageHandler {
   return (event): void => {
@@ -45,7 +45,6 @@ export function filterPingPongMessages(listener: messageHandler): messageHandler
       if (PingPongMessages.guard(message)) {
         return
       }
-      // eslint-disable-next-line no-empty
     } catch (err) {}
     return listener(event)
   }
