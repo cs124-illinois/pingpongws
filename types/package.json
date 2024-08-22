@@ -1,6 +1,6 @@
 {
   "name": "@cs124/pingpongws-types",
-  "version": "2024.8.0",
+  "version": "2024.8.1",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
@@ -32,7 +32,6 @@
     "rimraf": "6.0.1",
     "runtypes": "6.7.0",
     "typescript": "5.5.4",
-    "typescript-eslint": "8.2.0",
-    "ws": "8.18.0"
+    "typescript-eslint": "8.2.0"
   }
 }
