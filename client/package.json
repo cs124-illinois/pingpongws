@@ -1,7 +1,8 @@
 {
   "name": "@cs124/pingpongws-client",
-  "version": "2024.8.0",
+  "version": "2024.8.2",
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -17,7 +18,7 @@
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@cs124/pingpongws-types": "2024.8.0"
+    "@cs124/pingpongws-types": "2024.8.1"
   },
   "peerDependencies": {
     "reconnecting-websocket": "cs124-illinois/reconnecting-websocket"
