@@ -14,22 +14,22 @@
     "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write"
   },
   "dependencies": {
-    "@cs124/pingpongws-client": "2023.1.1",
-    "next": "13.4.13",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "reconnecting-websocket": "cs124-illinois/reconnecting-websocket#2023.8.0",
+    "@cs124/pingpongws-client": "2024.8.2",
+    "next": "15.4.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "reconnecting-websocket": "cs124-illinois/reconnecting-websocket#2024.8.0",
     "runtypes": "6.7.0"
   },
   "devDependencies": {
-    "@types/react": "18.2.19",
-    "eslint": "8.46.0",
-    "eslint-config-next": "13.4.13",
-    "gh-pages": "5.0.0",
-    "prettier": "3.0.1",
+    "@types/react": "19.1.8",
+    "eslint": "9.31.0",
+    "eslint-config-next": "15.4.1",
+    "gh-pages": "6.3.0",
+    "prettier": "3.6.2",
     "prettier-package-json": "2.8.0",
-    "prettier-plugin-organize-imports": "3.2.3",
-    "sass": "1.64.2",
-    "typescript": "5.1.6"
+    "prettier-plugin-organize-imports": "4.1.0",
+    "sass": "1.89.2",
+    "typescript": "5.8.3"
   }
 }

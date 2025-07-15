@@ -4,7 +4,7 @@ import ReconnectingWebSocket from "reconnecting-websocket"
 
 const PingPongWSDemo: React.FC = () => {
   const [connected, setConnected] = useState(false)
-  const connection = useRef<ReconnectingWebSocket | undefined>()
+  const connection = useRef<ReconnectingWebSocket | undefined>(undefined)
 
   useEffect(() => {
     connection.current?.close()

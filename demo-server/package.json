@@ -9,30 +9,30 @@
     "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write"
   },
   "dependencies": {
-    "@cs124/pingpongws-server": "2023.1.0",
-    "@koa/cors": "4.0.0",
-    "@koa/router": "12.0.0",
-    "koa": "2.14.2",
-    "koa-easy-ws": "cs124-illinois/koa-easy-ws#2023.8.0"
+    "@cs124/pingpongws-server": "2024.8.2",
+    "@koa/cors": "5.0.0",
+    "@koa/router": "13.1.1",
+    "koa": "3.0.0",
+    "koa-easy-ws": "cs124-illinois/koa-easy-ws#2024.8.0"
   },
   "devDependencies": {
-    "@types/koa": "2.13.8",
-    "@types/koa__cors": "4.0.0",
-    "@types/koa__router": "12.0.0",
-    "@typescript-eslint/eslint-plugin": "6.3.0",
-    "@typescript-eslint/parser": "6.3.0",
-    "depcheck": "1.4.3",
+    "@types/koa": "2.15.0",
+    "@types/koa__cors": "5.0.0",
+    "@types/koa__router": "12.0.4",
+    "@typescript-eslint/eslint-plugin": "8.37.0",
+    "@typescript-eslint/parser": "8.37.0",
+    "depcheck": "1.4.7",
     "env-cmd": "10.1.0",
-    "eslint": "8.46.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-prettier": "5.0.0",
-    "nodemon": "3.0.1",
-    "npm-check-updates": "16.10.18",
-    "prettier": "3.0.1",
+    "eslint": "9.31.0",
+    "eslint-config-prettier": "10.1.5",
+    "eslint-plugin-prettier": "5.5.1",
+    "nodemon": "3.1.10",
+    "npm-check-updates": "18.0.1",
+    "prettier": "3.6.2",
     "prettier-package-json": "2.8.0",
-    "ts-node": "10.9.1",
-    "typescript": "5.1.6",
-    "ws": "8.13.0"
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3",
+    "ws": "8.18.3"
   },
   "nodemonConfig": {
     "watch": [
