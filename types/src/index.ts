@@ -1,4 +1,4 @@
-import { Boolean, Literal, Number, Object, Optional, Static, Union } from "runtypes"
+import { Boolean, Literal, Number, Object, Static, Union } from "runtypes"
 
 export const PingMessage = Object({
   type: Literal("ping"),
@@ -16,12 +16,12 @@ export const PingPongMessages = Union(PingMessage, PongMessage)
 export type PingPongMessages = PingMessage | PongMessage
 
 export const PingPongOptions = Object({
-  interval: Optional(Number),
-  timeout: Optional(Number),
-  verbose: Optional(Boolean),
-  logDisconnects: Optional(Boolean),
-  useOtherMessages: Optional(Boolean),
-  usePingMessages: Optional(Boolean),
+  interval: Number.optional(),
+  timeout: Number.optional(),
+  verbose: Boolean.optional(),
+  logDisconnects: Boolean.optional(),
+  useOtherMessages: Boolean.optional(),
+  usePingMessages: Boolean.optional(),
 })
 export type PingPongOptions = Static<typeof PingPongOptions> & {
   logIdentifier?: () => string
