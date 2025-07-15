@@ -1,6 +1,6 @@
 {
   "name": "@cs124/pingpongws-server",
-  "version": "2024.8.2",
+  "version": "2025.7.0",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
@@ -18,7 +18,7 @@
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@cs124/pingpongws-types": "2024.8.1"
+    "@cs124/pingpongws-types": "2025.7.0"
   },
   "devDependencies": {
     "@eslint/js": "9.31.0",

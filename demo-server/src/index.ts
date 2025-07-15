@@ -14,7 +14,7 @@ router.get("/", async (ctx) => {
     "message",
     filterPingPongMessages(async ({ data }) => {
       console.log(data)
-    })
+    }),
   )
 })
 

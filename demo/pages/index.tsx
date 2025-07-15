@@ -22,7 +22,7 @@ const PingPongWSDemo: React.FC = () => {
       "message",
       filterPingPongMessages(({ data }) => {
         console.log(data)
-      })
+      }),
     )
     return () => {
       connection.current?.close()

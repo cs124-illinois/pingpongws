@@ -1,15 +1,16 @@
 {
   "private": true,
   "name": "demo-server",
-  "version": "2023.1.0",
+  "version": "2025.7.0",
   "scripts": {
+    "checker": "yarn prettier && yarn eslint",
     "eslint": "eslint src/**",
     "ncu": "ncu",
-    "start": "nodemon",
-    "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write"
+    "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write",
+    "start": "nodemon"
   },
   "dependencies": {
-    "@cs124/pingpongws-server": "2024.8.2",
+    "@cs124/pingpongws-server": "2025.7.0",
     "@koa/cors": "5.0.0",
     "@koa/router": "13.1.1",
     "koa": "3.0.0",

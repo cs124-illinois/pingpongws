@@ -1,20 +1,21 @@
 {
   "private": true,
   "name": "demo",
-  "version": "0.1.0",
+  "version": "2025.7.0",
   "scripts": {
     "build": "next build",
+    "checker": "yarn prettier && yarn lint && yarn build",
     "predeploy": "yarn export",
     "deploy": "gh-pages -t -d dist",
     "preexport": "rimraf dist && NEXT_PUBLIC_BASE_PATH=/google-login yarn build",
     "export": "NEXT_PUBLIC_BASE_PATH=/google-login next export -o dist && touch dist/.nojekyll",
     "lint": "next lint",
+    "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write",
     "serve": "next start",
-    "start": "next dev",
-    "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write"
+    "start": "next dev"
   },
   "dependencies": {
-    "@cs124/pingpongws-client": "2024.8.2",
+    "@cs124/pingpongws-client": "2025.7.0",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
