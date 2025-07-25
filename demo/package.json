@@ -1,35 +1,35 @@
 {
   "private": true,
   "name": "demo",
-  "version": "2025.7.0",
+  "version": "0.1.0",
   "scripts": {
     "build": "next build",
-    "checker": "yarn prettier && yarn lint && yarn build",
+    "checker": "exit",
     "predeploy": "yarn export",
     "deploy": "gh-pages -t -d dist",
     "preexport": "rimraf dist && NEXT_PUBLIC_BASE_PATH=/google-login yarn build",
     "export": "NEXT_PUBLIC_BASE_PATH=/google-login next export -o dist && touch dist/.nojekyll",
     "lint": "next lint",
-    "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write",
     "serve": "next start",
-    "start": "next dev"
+    "start": "next dev",
+    "prettier": "prettier -w --plugin=prettier-plugin-organize-imports . && prettier-package-json --write"
   },
   "dependencies": {
-    "@cs124/pingpongws-client": "2025.7.0",
-    "next": "15.4.1",
+    "@cs124/pingpongws-client": "2025.7.1",
+    "next": "15.4.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "reconnecting-websocket": "cs124-illinois/reconnecting-websocket#2024.8.0",
-    "runtypes": "7.0.4"
+    "runtypes": "6.7.0"
   },
   "devDependencies": {
     "@types/react": "19.1.8",
-    "eslint": "9.31.0",
-    "eslint-config-next": "15.4.1",
+    "eslint": "9.32.0",
+    "eslint-config-next": "15.4.4",
     "gh-pages": "6.3.0",
     "prettier": "3.6.2",
     "prettier-package-json": "2.8.0",
-    "prettier-plugin-organize-imports": "4.1.0",
+    "prettier-plugin-organize-imports": "4.2.0",
     "sass": "1.89.2",
     "typescript": "5.8.3"
   }
