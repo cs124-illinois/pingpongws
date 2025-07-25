@@ -3,7 +3,6 @@
   "name": "demo-server",
   "version": "2025.7.1",
   "scripts": {
-    "checker": "exit",
     "eslint": "eslint src/**",
     "ncu": "ncu",
     "start": "nodemon",

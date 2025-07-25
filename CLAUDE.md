@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a TypeScript monorepo for PingPongWS - a WebSocket ping-pong library for maintaining WebSocket connections. The project uses Yarn workspaces and consists of multiple packages:
+This is a TypeScript monorepo for PingPongWS - a WebSocket ping-pong library for maintaining WebSocket connections. The project uses npm workspaces and consists of multiple packages:
 
 - `types/` - Shared type definitions and message validation using Runtypes
 - `client/` - Client-side WebSocket wrapper that sends ping messages and expects pong responses
@@ -26,26 +26,26 @@ The packages use a shared options system defined in `types/src/index.ts:18-36` w
 ## Development Commands
 
 ### Root Commands
-- `yarn install` - Install all dependencies across workspaces
-- `yarn workspace <package-name> <command>` - Run commands in specific packages
+- `npm install` - Install all dependencies across workspaces
+- `npm run <command> --workspace=<package-name>` - Run commands in specific packages
 
 ### Common Package Commands (client, server, types)
-- `yarn build` - Compile TypeScript to JavaScript
-- `yarn start` - Watch mode compilation (`tsc -w`)
-- `yarn checker` - Run full validation (depcheck, prettier, eslint, tsc)
-- `yarn eslint` - Run ESLint on source files
-- `yarn prettier` - Format code and organize imports
-- `yarn clean` - Remove dist directory
-- `yarn tsc` - Type check without emitting files
-- `yarn ncu` - Check for dependency updates
+- `npm run build` - Compile TypeScript to JavaScript
+- `npm run start` - Watch mode compilation (`tsc -w`)
+- `npm run check` - Run full validation (depcheck, prettier, eslint, tsc)
+- `npm run eslint` - Run ESLint on source files
+- `npm run prettier` - Format code and organize imports
+- `npm run clean` - Remove dist directory
+- `npm run tsc` - Type check without emitting files
+- `npm run ncu` - Check for dependency updates
 
 ### Demo Application (Next.js)
-- `yarn workspace demo start` - Start development server
-- `yarn workspace demo build` - Build for production
-- `yarn workspace demo serve` - Serve built application
+- `npm run start --workspace=demo` - Start development server
+- `npm run build --workspace=demo` - Build for production
+- `npm run serve --workspace=demo` - Serve built application
 
 ### Demo Server (Koa.js)
-- `yarn workspace demo-server start` - Start development server with nodemon
+- `npm run start --workspace=demo-server` - Start development server with nodemon
 
 ## Build System
 
@@ -53,13 +53,13 @@ The packages use a shared options system defined in `types/src/index.ts:18-36` w
 - **ESLint**: Configured with flat config format (eslint.config.mjs)
 - **Prettier**: Code formatting with import organization
 - **Date-based versioning**: Uses YYYY.M.PATCH format (e.g., 2024.8.2)
-- **Yarn workspaces**: Manages dependencies across packages
+- **npm workspaces**: Manages dependencies across packages
 - **No test framework**: Project currently has no testing setup
 
 ## Key Files
 
 - `package.json` - Root workspace configuration
-- `yarn.lock` - Dependency lock file
+- `package-lock.json` - Dependency lock file
 - `types/src/index.ts` - Core type definitions and message validation
 - `client/src/index.ts` - Client-side ping implementation
 - `server/src/index.ts` - Server-side pong implementation
